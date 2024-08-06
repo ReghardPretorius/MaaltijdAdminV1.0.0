@@ -1,0 +1,169 @@
+.orderdetails__item-info img {
+    width: 120px;
+    height: 75px;
+    object-fit: cover;
+  }
+  
+  .orderdetails__item:hover {
+    background-color: rgba(230, 230, 230, 0.994);
+    cursor: pointer;
+  }
+  
+  .orderdetails__product-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .orderdetails__product-price {
+    font-size: 0.8rem;
+  }
+  
+  .orderdetails__product-price span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #dbab27;
+  }
+  
+  .increase__decrease-btn {
+    background: #dbab27;
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  
+  .increase__btn,
+  .decrease__btn {
+    cursor: pointer;
+  }
+  
+  .delete__btn {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .orderdetails__item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #fde4e4;
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .delete__btn {
+      font-size: 1rem;
+    }
+  }
+
+  .orderdetails_item {
+    /* width: inherit; */
+    border: 1px solid #000D29;
+    background-color: #DCDCDC !important;
+    border-radius: 8px !important;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    /* margin-top: 10px; */
+    margin-bottom: 10px 0;
+    width: 100%;
+    max-width: 900px;
+
+    /* border-top-left-radius:8px !important;
+    border-top-right-radius: 8px  !important;
+
+    border-bottom-left-radius:8px !important;
+    border-bottom-right-radius: 8px  !important; */
+  }
+
+  .orderdetails_item:hover {
+    cursor: default;
+}
+
+
+  .orderdetails_scard-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .orderdetails_card-content {
+    font-size: 0.9em;
+    color: #000D29;
+  }
+
+  .orderdetails_total_amount{
+    font-size: 1.1em !important;
+    color: #000D29 !important;
+  }
+  
+  .orderdetails_rowitem {
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        max-width: 900px;
+  }
+
+.changedate_rowitem {
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 900px;
+}
+
+  .orderrow_rowitem {
+    justify-content: center;
+    align-items: center;
+   
+}
+  
+  .orderdetails_overview_card {
+    /* width: 300px; */
+    border: 1px solid #000D29;
+    border-radius: 8px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    padding-left: 30px;
+    text-align: center;
+    max-width: 900px;
+}
+
+.orderdetails__item-list {
+  /* height: calc(100vh - 400px); */
+  /* padding-bottom: 70px; */
+  overflow-y: auto;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #888 #f1f1f1; /* For Firefox */
+  /* margin-right: auto;
+  margin-left:auto; */
+  max-width: 900px;
+  padding: 0 15px; /* Add padding to the container */
+  margin: 0 auto;
+
+}
+
+.orderdetails__page{
+
+}
+
+
+/* Webkit browsers (Chrome, Safari) */
+.orderdetails__item-list::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.orderdetails__item-list::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+}
+
+.orderdetails__item-list::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Roundness of the scrollbar thumb */
+  border: 2px solid #f1f1f1; /* Space around the scrollbar thumb */
+}
+
+.orderdetails__item-list::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar thumb when hovered */
+}
+
+
+.orderdetails__item-list > h6 {
+  margin-top: 5rem;
+}

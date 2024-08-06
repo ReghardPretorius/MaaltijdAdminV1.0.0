@@ -1,0 +1,34 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* Increase this value to adjust the distance between input and map */
+  }
+  
+  .inputContainer input {
+    /* Your input styles */
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 20px; /* Increase this value to adjust the distance between input and map */
+    width: 100%;
+    /* Add more styles as needed */
+  }
+  
+  .map {
+    /* Your map styles */
+    height: 400px; /* Adjust height as needed */
+    width: 100%; /* Or set a specific width */
+    border: 3px solid #000000;
+  }
+
+  .cleared {
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25%, 75% {
+      transform: translateX(4px);
+    }
+  }

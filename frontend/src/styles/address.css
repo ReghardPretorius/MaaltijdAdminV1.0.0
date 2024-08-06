@@ -1,0 +1,7 @@
+.addresslayout {
+    /* background-color: #000D29 !important; */
+    /* height: calc(100vh-130px) !important; */
+    top: 70px;
+    height: calc(100vh - 130px);
+    overflow-y: auto;
+}

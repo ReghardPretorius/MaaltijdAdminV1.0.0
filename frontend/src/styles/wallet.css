@@ -1,0 +1,28 @@
+.users_card {
+
+        /* width: 300px; */
+        border: 1px solid #000D29;
+        /* background-color: #DCDCDC !important; */
+        background-color: #000D29  !important;
+        border-radius: 8px;
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+        padding: 12px;
+        margin-top: 0px;
+        margin-bottom: 15px;
+        text-align: left;
+        max-width: 900px;
+        max-width: 900px;
+        color: #ffffff;
+    
+        border-bottom-left-radius:8px !important;
+        border-bottom-right-radius: 8px  !important;
+
+}
+
+.custom-checkbox {
+        width: 15px;
+        height: 15px;
+        transform: scale(1.5); /* Increase size */
+        margin-right: 10px; /* Optional: Space between checkbox and label */
+      }
+      

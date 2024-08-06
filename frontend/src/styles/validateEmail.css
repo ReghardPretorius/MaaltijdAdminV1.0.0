@@ -1,0 +1,9 @@
+.otp-container {
+    display: flex;
+  }
+
+  .otp-input {
+    width: 20px; /* Adjust the width as needed */
+    text-align: center;
+    margin: 0 5px;
+  }

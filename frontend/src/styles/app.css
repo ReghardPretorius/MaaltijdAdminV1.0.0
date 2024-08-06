@@ -1,0 +1,13 @@
+/* App.css */
+.app-container {
+    min-height: 100vh;
+    position: relative;
+    /* padding-bottom: 50px; Adjust if needed for footer space */
+  }
+
+  .content-container {
+    position: relative !important;
+    z-index: 0 !important; /* Default content z-index */
+    padding-bottom: 50px !important; /* Adjust if needed for footer space */
+  }
+  

@@ -1,0 +1,14 @@
+.hero-container {
+    padding-top: 100px;
+    position: relative;
+    z-index: 1; /* Ensure this is above the background */
+  }
+
+  /* hero.css */
+.full-width-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  

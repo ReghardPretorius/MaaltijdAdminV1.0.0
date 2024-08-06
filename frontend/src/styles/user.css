@@ -1,0 +1,195 @@
+.user-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .user-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .user-card-header h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+  }
+  
+  .user-card-body p {
+    margin: 5px 0;
+  }
+  
+  .usersheader{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+
+
+  .usercart__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.639);
+    z-index: 99999;
+  }
+  
+  .user {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100vw;
+    height: calc(100vh-130px) !important;
+    background: #fff;
+    z-index: 999999;
+  }
+
+  
+  /* .order__item-list {
+    height: calc(100vh - 130px);
+    padding-bottom: 70px;
+    overflow-y: auto;
+  } */
+
+  /* Style for the order item list container */
+.user__item-list {
+    /* height: calc(100vh - 130px); */
+    padding-bottom: 70px;
+    overflow-y: auto;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #888 #f1f1f1; /* For Firefox */
+    margin-right: auto;
+  margin-left:auto;
+  max-width: 900px;
+  
+  }
+  
+  /* Webkit browsers (Chrome, Safari) */
+  .user__item-list::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .user__item-list::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+  }
+  
+  .user__item-list::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Roundness of the scrollbar thumb */
+    border: 2px solid #f1f1f1; /* Space around the scrollbar thumb */
+  }
+  
+  .user__item-list::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb when hovered */
+  }
+  
+  
+  .user__item-list > h6 {
+    margin-top: 5rem;
+  }
+  
+  .user__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 20px;
+    width: 100%;
+    height: 70px;
+    background: #000D29 !important;;
+  }
+  
+  .user__bottom h6 {
+    font-size: 1rem;
+    color: #fff;
+  }
+  
+  .user__bottom h6 span {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  
+  .user__bottom button {
+    border: none;
+    padding: 4px 20px;
+    border-radius: 5px;
+    background: #fff;
+    color: #212245;
+  }
+  
+  .user__bottom button a {
+    color: #212245;
+    font-weight: 600;
+  }
+  
+  @media only screen and (min-width: 870px) {
+    .user {
+      width: 100%;
+    }
+  }
+
+  .user__closeButton {
+    font-size: 3rem;
+    background: #212245;
+    padding: 5px;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    width: fit-content;
+    height: 60px;
+    padding: 10px 20px;
+    position: absolute;
+    top: 0.5rem;
+    right: 0rem;
+    margin: 0.5rem 0;
+    display: none;
+  }
+
+  .user_card {
+    /* width: 300px; */
+    border: 1px solid #000D29;
+    /* background-color: #DCDCDC !important; */
+    background-color: #000D29 !important;
+    border-radius: 8px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    text-align: left;
+    max-width: 900px;
+    max-width: 900px;
+
+    border-bottom-left-radius:8px !important;
+    border-bottom-right-radius: 8px  !important;
+  }
+
+  /* Add hover effect to show pointer cursor */
+.user_card:hover {
+    cursor: pointer;
+}
+  .user_card-title {
+    font-size: 1.0em;
+
+    color: #ffffff;
+  }
+  .usercard-content {
+    font-size: 1.0em;
+    color: #ffffff;
+    padding-left: 15px;
+  }
+  
+  .userrowitem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+  }
+
+  .email{
+    margin-right: auto;
+    margin-left:auto;
+    max-width: 900px;
+  }
+  

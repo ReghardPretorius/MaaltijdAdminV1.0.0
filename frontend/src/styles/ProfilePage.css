@@ -1,0 +1,30 @@
+/* .container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  } */
+  
+  .email {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .blocksContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .block {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: left;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  

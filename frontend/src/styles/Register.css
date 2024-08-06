@@ -1,0 +1,23 @@
+/* Style the "Required" label */
+.required-label {
+    color: red; /* Make the text red */
+    font-size: 0.8rem; /* Adjust font size as needed */
+  }
+
+  .optional-label {
+
+    font-size: 0.8rem; /* Adjust font size as needed */
+  }
+
+  .error-message {
+    color: red;
+    font-size: 0.9em;
+  }
+
+  .register-container{
+    padding-top: 100px;
+    position: relative;
+    z-index: 1; /* Ensure this is above the background */
+    padding-left: 15px;
+    padding-right: 15px;
+  }

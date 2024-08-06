@@ -1,0 +1,17 @@
+.arrow {
+    display: flex;
+    justify-content: flex-start;
+    margin-right: auto;
+  }
+  
+  .profile {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .d-flex {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
