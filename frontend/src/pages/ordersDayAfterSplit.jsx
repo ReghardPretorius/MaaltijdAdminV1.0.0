@@ -577,11 +577,11 @@ const DayAfterSplit = () => {
   </div>
 </div>
 </div>
-<Row class='pl-1 pr-1 '>
+<Row className='pl-1 pr-1 '>
 <div className="messageCard">
-<div class="rowitem">
-<div class="shopping_card">
-<div class="card-content"><span>
+<div className="rowitem">
+<div className="shopping_card">
+<div className="card-content"><span>
 {message === 'Orders Finalised' ? (
 <AiFillCheckCircle className="checkoutIcon pr-2" style={{ color: 'green' }}/>
 ) : null}
@@ -598,11 +598,11 @@ const DayAfterSplit = () => {
         <div className="order__item-list">
           {displayOrders.length === 0 ? (
             <Container>
-              <Row class='pl-1 pr-1 '>
-                <div class="orowitem">
-                  <div class="noorderyet_card">
+              <Row className='pl-1 pr-1 '>
+                <div className="orowitem">
+                  <div className="noorderyet_card">
                     <span>
-                      <div class="ocard-content px-4">No Orders For Tomorrow</div>
+                      <div className="ocard-content px-4">No Orders For Tomorrow</div>
                     </span>
                   </div>
                 </div>

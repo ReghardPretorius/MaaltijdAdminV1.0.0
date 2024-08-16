@@ -125,12 +125,12 @@ const OrdersList = () => {
             <div className="order__item-list">
           {displayOrders.length === 0 ? (
             <Container>
-            <Row class='pl-1 pr-1 '>
-                    <div class="orowitem">
-                  <div class="noorderyet_card">
+            <Row className='pl-1 pr-1 '>
+                    <div className="orowitem">
+                  <div className="noorderyet_card">
                   {/* <div class="card-title">Special Offer!</div> */}
                   <span>
-                  <div class="ocard-content px-4">No Orders (Yet <span role="img" aria-label="grin tongue wink">😜</span>)</div>
+                  <div className="ocard-content px-4">No Orders (Yet <span role="img" aria-label="grin tongue wink">😜</span>)</div>
                   </span>
               </div>
               </div>

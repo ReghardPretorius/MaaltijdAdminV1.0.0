@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from "react";
 import { useGetUndeliveredOrdersMutation, useGetOrderItemsMutation,     useSendDeliveredEmailMutation,
     useUpdateStatusLogMutation,     useUpdatePaidOrderMutation  } from "../slices/orderAPIslice";
-import { useGetAllUsersMutation } from "../slices/usersApiSlice";
+import { useGetAllUsersMutation, useGetWalletAmountMutation } from "../slices/usersApiSlice";
 import Button from "react-bootstrap/Button";
 import { FaArrowLeft } from 'react-icons/fa';
 import Loader from '../components/Loader';
@@ -26,6 +26,8 @@ const Wallet = () => {
   const navigate = useNavigate();
 
   const [getAllUsers, { isLoadingGetAllUsers }] = useGetAllUsersMutation();
+  const [getUsersWallet, { isLoadingGetUsersWallet }] = useGetWalletAmountMutation();
+  
 
 
 
@@ -33,16 +35,19 @@ const Wallet = () => {
     const GetUsers = async () => {
         try {
             const data = await getAllUsers().unwrap();
-            console.log(data);
+
             let outputArray = [];
             for (let i = 0; i < data.length; i++) {
+              let userID = data[i]._id;
+              let amount = await getUsersWallet({ userID }).unwrap();
+              
                 let entry = {
                     id: data[i]._id,
                     name: data[i].name,
                     surname: data[i].surname,
                     email: data[i].email,
                     cellNumber: data[i].cellNumber,
-                    wallet: data[i].wallet,
+                    wallet: amount.totalAmount,
                 };
                 outputArray.push(entry);
             }
@@ -129,11 +134,11 @@ const Wallet = () => {
         <div className="order__item-list">
           {displayUsers.length === 0 ? (
             <Container>
-              <Row class='pl-1 pr-1 '>
-                <div class="orowitem">
-                  <div class="noorderyet_card">
+              <Row className='pl-1 pr-1 '>
+                <div className="orowitem">
+                  <div className="noorderyet_card">
                     <span>
-                      <div class="ocard-content px-4">No Users</div>
+                      <div className="ocard-content px-4">No Users</div>
                     </span>
                   </div>
                 </div>

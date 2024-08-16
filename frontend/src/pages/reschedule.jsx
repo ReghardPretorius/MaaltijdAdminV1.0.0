@@ -176,7 +176,7 @@ const Reschedule = () => {
     return (
       <div>
         {orders.map((order, orderIndex) => (
-          <div key={orderIndex} className='outfordelivery_card'>
+          <div key={orderIndex} className='reschedule_card'>
             <p><strong>Name:</strong> {order.userName} {order.userSurname}</p>
             <p><strong>Cell:</strong> {order.userCell}</p>
             <p><strong>Delivery Date:</strong> {order.deliveryDate}</p>
@@ -229,11 +229,11 @@ const Reschedule = () => {
         <div className="order__item-list">
           {displayOrders.length === 0 ? (
             <Container>
-              <Row class='pl-1 pr-1 '>
-                <div class="orowitem">
-                  <div class="noorderyet_card">
+              <Row className='pl-1 pr-1 '>
+                <div className="orowitem">
+                  <div className="noorderyet_card">
                     <span>
-                      <div class="ocard-content px-4">No Deliveries to Rescedule</div>
+                      <div className="ocard-content px-4">No Deliveries to Rescedule</div>
                     </span>
                   </div>
                 </div>

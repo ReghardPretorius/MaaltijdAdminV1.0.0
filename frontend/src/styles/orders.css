@@ -42,7 +42,7 @@
     top: 70px;
     right: 0;
     width: 100vw;
-    height: calc(100vh-130px) !important;
+    height: calc(100dvh-130px) !important;
     background: #fff;
     z-index: 999999;
   }
@@ -56,7 +56,7 @@
 
   /* Style for the order item list container */
 .order__item-list {
-    height: calc(100vh - 130px);
+    height: calc(100dvh - 130px);
     padding-bottom: 70px;
     overflow-y: auto;
     scrollbar-width: thin; /* For Firefox */

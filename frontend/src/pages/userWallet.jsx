@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useGetOrderItemsMutation, useGetOrderDetailsMutation, useGetOrderDetailsNoUserMutation } from "../slices/orderAPIslice";
 import {    useSendRescheduleEmailMutation,
   useUpdateStatusLogMutation,     useUpdatePaidOrderMutation  } from "../slices/orderAPIslice";
-  import { useGetUserInfoMutation, useUpdateWalletMutation, useCreateWalletLogMutation } from '../slices/usersApiSlice';
+  import { useGetUserInfoMutation, useUpdateWalletMutation, useCreateWalletLogMutation, useGetWalletAmountMutation } from '../slices/usersApiSlice';
 import { Form, Button, Row, Col, Container, ListGroup, Modal, Input  } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux"; 
@@ -55,7 +55,7 @@ const UserWallet = () => {
     const [updateWallet, { isLoadingUpdateWallet }] = useUpdateWalletMutation();
     const [sendRescheduleMail, { isLoadingSendDeliveredMail }] = useSendRescheduleEmailMutation();
     const [createWalletLog, { isLoadingCreateWalletLog }] = useCreateWalletLogMutation();
-    
+    const [getUsersWallet, { isLoadingGetUsersWallet }] = useGetWalletAmountMutation();
 
 
 
@@ -63,7 +63,7 @@ const UserWallet = () => {
       const options = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' };
       let date = new Date(selectedDate)
 let sd = date.toLocaleDateString('en-ZA', options);
-console.log(sd);
+
 setSelectedDateFormatted(sd);
 
   }, [selectedDate]);
@@ -74,7 +74,7 @@ setSelectedDateFormatted(sd);
 
       const handleShowModal = () => {
         setShowModal(true);
-        console.log(currentWallet);
+
       };
     
       const handleCloseModal = () => {
@@ -115,7 +115,10 @@ setSelectedDateFormatted(sd);
       };
 
       const date = new Date(selectedDate);
-      const expDate = new Intl.DateTimeFormat('en-za', options2).format(date);
+      //const expDate = new Intl.DateTimeFormat('en-za', options2).format(date);
+
+      const date2h = new Date(date.getFullYear(), date.getMonth(), date.getDate(),2 ,0 ,0);
+      const expDate = new Intl.DateTimeFormat('en-za', options2).format(date2h);
 
           const order = {
             _id: id,
@@ -144,11 +147,13 @@ setSelectedDateFormatted(sd);
         const Order = async () => {
             try {
                 let user = await getUserInfo({ id }).unwrap();
-                console.log(user);
+                let userID = id;
+                let amount = await getUsersWallet({ userID }).unwrap();
+
                 setName(user.name);
                 setSurname(user.surname);
                 setEmail(user.email);
-                setCurrentWallet(user.wallet);
+                setCurrentWallet(amount.totalAmount);
                 setCellNumber(user.cellNumber);
 
 
@@ -166,7 +171,7 @@ setSelectedDateFormatted(sd);
 
 
     if (!userID) {
-        return <div>Order not found</div>;
+        return <div>User not found</div>;
     }
 
     if (loadingDetails) {
@@ -229,7 +234,7 @@ Enter Campaign:
     <input   value={campaignGlobal}
             onChange={handleCampaignChange} />
     </Row>
-    <Row className='pl-3'>
+    {/* <Row className='pl-3'>
     <div className='pt-3 pl-5'>
         <input 
           type="checkbox"
@@ -248,7 +253,7 @@ Enter Campaign:
         />
       )}
     </div>
-    </Row>
+    </Row> */}
     <Row>
     <div className='button-container pt-3'>
     <Button onClick={() => handleShowModal()} disabled={!campaignGlobal || !walletGlobal}>Increase Wallet</Button>

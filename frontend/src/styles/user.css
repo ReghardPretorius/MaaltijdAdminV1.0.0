@@ -42,7 +42,7 @@
     top: 70px;
     right: 0;
     width: 100vw;
-    height: calc(100vh-130px) !important;
+    height: calc(100dvh-130px) !important;
     background: #fff;
     z-index: 999999;
   }

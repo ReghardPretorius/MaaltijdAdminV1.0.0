@@ -176,11 +176,11 @@ const addDays = (date, days) => {
             </div>
           </div>
         </div>
-        <Row class='pl-1 pr-1 '>
+        <Row className='pl-1 pr-1 '>
 <div className="messageCard">
-          <div class="rowitem">
-        <div class="shopping_card">
-        <div class="card-content"><span>
+          <div className="rowitem">
+        <div className="shopping_card">
+        <div className="card-content"><span>
         {message === 'Orders Finalised' ? (
           <AiFillCheckCircle className="checkoutIcon pr-2" style={{ color: 'green' }}/>
         ) : null}

@@ -119,7 +119,7 @@ const DeliveryMain = () => {
             let toDeliver = [];
             let outForDelivery = [];
             let delivered = [];
-console.log(outputArray);
+
             // Split the outputArray based on status
             //toDeliver = outputArray.filter(entry => entry.status === 'Order Placed');
             toDeliver = outputArray.filter(entry => entry.status === 'Cooling Process');
@@ -476,11 +476,11 @@ console.log(outputArray);
         <div className="order__item-list">
           {displayOrders.length === 0 ? (
             <Container>
-              <Row class='pl-1 pr-1 '>
-                <div class="orowitem">
-                  <div class="noorderyet_card">
+              <Row className='pl-1 pr-1 '>
+                <div className="orowitem">
+                  <div className="noorderyet_card">
                     <span>
-                      <div class="ocard-content px-4">No Deliveries For Today</div>
+                      <div className="ocard-content px-4">No Deliveries For Today</div>
                     </span>
                   </div>
                 </div>

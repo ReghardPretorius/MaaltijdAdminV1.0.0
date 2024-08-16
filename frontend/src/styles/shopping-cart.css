@@ -13,7 +13,7 @@
     top: 70px;
     right: 0;
     width: 100vw;
-    height: calc(100vh-130px) !important;
+    height: calc(100dvh-130px) !important;
     background: #fff;
     z-index: 999999;
   }
@@ -25,7 +25,7 @@
   }
   
   .cart__item-list {
-    height: calc(100vh - 200px);
+    height: calc(100dvh - 200px);
     /* padding-bottom: 70px;
     overflow-y: auto; */
   }
@@ -142,7 +142,7 @@
   }
 
   .cartdetails__page{
-    height: calc(100vh - 130px);
+    height: calc(100dvh - 130px);
     overflow-y: hidden;
   }
   

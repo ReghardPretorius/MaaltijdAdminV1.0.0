@@ -86,7 +86,7 @@ const RescheduleOrder = () => {
 
     
           setRemainingHeight(windowHeight - 130 - 30 - headerHeight - detailsHeight);
-          console.log(`Header Height: ${headerHeight}, Details Height: ${detailsHeight}, Window Height: ${windowHeight}`);
+         
         };
     
         // Initial calculation
@@ -101,7 +101,7 @@ const RescheduleOrder = () => {
 
       const handleShowModal = () => {
         setShowModal(true);
-        console.log(selectedDate);
+
       };
     
       const handleCloseModal = () => {
@@ -148,7 +148,7 @@ const RescheduleOrder = () => {
         const options = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' };
         let date = new Date(selectedDate)
 let sd = date.toLocaleDateString('en-ZA', options);
-console.log(sd);
+
 setSelectedDateFormatted(sd);
 
     }, [selectedDate]);
@@ -162,7 +162,7 @@ setSelectedDateFormatted(sd);
                 if (order) {
                   setValidOrder(true);
               }
-                console.log(order.timestamp);
+
                 let orderDate = new Date(order.timestamp);
                 let orderDateFormatted = orderDate.toLocaleDateString('en-ZA', options);
                 let deliveryDate = new Date(order.deliveryDate);
@@ -171,7 +171,7 @@ setSelectedDateFormatted(sd);
 
                 let id = order.userID; 
                 let user = await getUserInfo({ id }).unwrap();
-                console.log(user);
+
                 setName(user.name);
                 setSurname(user.surname);
                 setEmail(user.email);
@@ -186,7 +186,7 @@ setSelectedDateFormatted(sd);
                 setShortAddress(order.shortAddress);
                 setOrderDate(orderDateFormatted);
                 setID(order._id);
-                console.log(order);
+
 
             } catch (error) {
                 console.error("Failed to fetch order:", error);

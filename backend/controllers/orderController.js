@@ -390,7 +390,7 @@ const createStatusLog = asyncHandler(async (req, res) => {
 const updateStatusLog = asyncHandler(async (req, res) => {
 
 const OGOrderID = req.body.id;
-console.log(OGOrderID);
+
     
   const orderstatus =  await orderStatus.findOne({ OGOrderID });
 
@@ -461,7 +461,7 @@ const getDeliveriesByDate = asyncHandler(async (req, res) => {
 
 
 const getUndeliveredOrders = asyncHandler(async (req, res) => {
-console.log('ping')
+
  const orders = await PaidOrder.find({ status: { $ne: 'Delivered' } });
  //console.log(orders); 
  if (orders) {

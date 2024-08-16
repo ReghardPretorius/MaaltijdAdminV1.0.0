@@ -1,6 +1,6 @@
 /* App.css */
 .app-container {
-    min-height: 100vh;
+    min-height: 100dvh;
     position: relative;
     /* padding-bottom: 50px; Adjust if needed for footer space */
   }

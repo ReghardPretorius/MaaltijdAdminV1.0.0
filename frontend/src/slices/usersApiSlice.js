@@ -36,10 +36,21 @@ export const userApiSlice = apiSlice.injectEndpoints({
     }),
 
     
+    getWalletAmount: builder.mutation({
+      query: (data) => ({
+        url: `${USERS_URL}/getwalletamount`,
+        method: 'POST',
+        body: data,
+      }),
+    }),
+
+    
+
+    
 
   }),
 });
 
 export const {
-  useGetUserInfoMutation, useGetAllUsersMutation,   useCreateWalletLogMutation, useUpdateWalletMutation
+  useGetUserInfoMutation, useGetAllUsersMutation,   useCreateWalletLogMutation, useUpdateWalletMutation, useGetWalletAmountMutation
 } = userApiSlice;

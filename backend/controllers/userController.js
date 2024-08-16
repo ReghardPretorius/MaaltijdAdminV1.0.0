@@ -65,7 +65,7 @@ const getAllUsers = asyncHandler(async (req, res) => {
 const createWalletLog = asyncHandler(async (req, res) => {
   const { userID, walletAmount, admin, campaign, expire, expiryDate, allocatedBy,  userName} = req.body;
 
-  console.log(req.body);
+
   const walletAmountNumber = Number(walletAmount);
 
   if (expire === 'Yes') {
@@ -79,7 +79,7 @@ const createWalletLog = asyncHandler(async (req, res) => {
       allocatedBy,  
       userName
     });
-    console.log(walletLog);
+
     if (walletLog) {
       res.status(201).json(walletLog);
     } else {
@@ -97,7 +97,98 @@ const createWalletLog = asyncHandler(async (req, res) => {
       userName
 
     });
-    console.log(walletLog);
+
+    if (walletLog) {
+      res.status(201).json(walletLog);
+    } else {
+      res.status(400);
+      throw new Error('Invalid data');
+    };
+
+  }
+
+
+ 
+
+});
+
+
+// @desc    Create a new wallet log
+// @route   POST /api/users
+// @access  Public
+const getUserWalletAmountLog = asyncHandler(async (req, res) => {
+  const { userID} = req.body;
+  console.log(userID);
+
+
+// Get the current date
+const currentDate = new Date();
+
+// Fetch wallets from the database with the specified userID
+const wallets = await WalletLog.find({ userID });
+
+if (wallets) {
+  // Filter wallets based on the specified conditions
+  const validWallets = wallets.filter(wallet => {
+    // Convert wallet.expiryDate to a Date object
+    const expiryDate = new Date(wallet.expiryDate);
+
+    // Return wallets where expiry is "No" or expiry is "Yes" but the expiryDate is in the future
+    return wallet.expire === "No" || (wallet.expire === "Yes" && expiryDate > currentDate);
+  });
+
+  // Sum the walletAmount of the remaining valid wallets
+  const totalAmount = validWallets.reduce((sum, wallet) => sum + wallet.walletAmount, 0);
+
+  // Return the total amount
+  res.status(201).json({ totalAmount });
+} else {
+  res.status(400);
+  throw new Error('Invalid data');
+}
+
+});
+
+
+// @desc    Create a new wallet log
+// @route   POST /api/users
+// @access  Public
+const increaseUserWallet = asyncHandler(async (req, res) => {
+  const { userID, walletAmount, admin, campaign, expire, expiryDate, allocatedBy,  userName} = req.body;
+
+
+  const walletAmountNumber = Number(walletAmount);
+
+  if (expire === 'Yes') {
+    const walletLog = await WalletLog.create({
+      userID,
+      walletAmount: walletAmountNumber, 
+      admin, 
+      campaign,
+      expire,
+      expiryDate,
+      allocatedBy,  
+      userName
+    });
+
+    if (walletLog) {
+      res.status(201).json(walletLog);
+    } else {
+      res.status(400);
+      throw new Error('Invalid data');
+    }
+  } else {
+    const walletLog = await WalletLog.create({
+      userID,
+      walletAmount: walletAmountNumber, 
+      admin, 
+      campaign,
+      expire,
+      allocatedBy,  
+      userName
+
+    });
+
     if (walletLog) {
       res.status(201).json(walletLog);
     } else {
@@ -116,6 +207,6 @@ const createWalletLog = asyncHandler(async (req, res) => {
 
 export {
 
-  getUserProfile, getAllUsers, createWalletLog
+  getUserProfile, getAllUsers, createWalletLog, increaseUserWallet, getUserWalletAmountLog
 
 };
