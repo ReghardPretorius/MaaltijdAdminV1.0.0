@@ -123,19 +123,7 @@ const LoginScreen = () => {
         </Button>
       </Form>
 
-      {/* {isLoading && <Loader />} */}
 
-      <Row className='py-3'>
-        <Col>
-          New Customer? <Link to='/register'>Register</Link>
-        </Col>
-      </Row>
-
-      <Row className='py-3'>
-        <Col>
-          Forgot Password? <Link to='/forgotpassword'>Change Password</Link>
-        </Col>
-      </Row>
     </FormContainer>
     </div>
   );

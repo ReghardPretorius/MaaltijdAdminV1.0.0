@@ -120,8 +120,11 @@ const RescheduleOrder = () => {
           hour12: false // 24-hour format
       };
 
-      const date = new Date(deliveryDate);
-      const delDate = new Intl.DateTimeFormat('en-za', options2).format(date);
+      let deliveryDate1 = new Date(selectedDate);
+      const date2h = new Date(deliveryDate1.getFullYear(), deliveryDate1.getMonth(), deliveryDate1.getDate(), 2, 0, 0);
+      const delDate = new Intl.DateTimeFormat('en-za', options2).format(date2h);
+      //const date = new Date(deliveryDate);
+      //const delDate = new Intl.DateTimeFormat('en-za', options2).format(date);
         if (status === 'Out For Delivery') {
           let statusNew = 'Cooling Process';
           const order = {
@@ -150,6 +153,7 @@ const RescheduleOrder = () => {
 let sd = date.toLocaleDateString('en-ZA', options);
 
 setSelectedDateFormatted(sd);
+
 
     }, [selectedDate]);
 

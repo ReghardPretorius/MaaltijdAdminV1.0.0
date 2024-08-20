@@ -236,7 +236,7 @@ const DayAfterSplit = () => {
   }
 
   const handleBackClicked = () => {
-    navigate('/tomorrow');
+    navigate('/dayafter');
   }
 
   const formatDate = (date) => {

@@ -118,7 +118,7 @@ const createWalletLog = asyncHandler(async (req, res) => {
 // @access  Public
 const getUserWalletAmountLog = asyncHandler(async (req, res) => {
   const { userID} = req.body;
-  console.log(userID);
+
 
 
 // Get the current date
